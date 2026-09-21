@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="中国公民党——民主、自由、人权、法治与公民参与">
+
+    <meta name="description"
+          content="中国公民党——民主、人权、法治、公民自由与政治参与">
+
     <title>中国公民党 | Chinese Citizens Party</title>
 
     <style>
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -20,8 +27,9 @@
                 "Microsoft YaHei",
                 Arial,
                 sans-serif;
-            color: #1b1b1b;
-            background: #f5f6f7;
+
+            color: #17212b;
+            background: #f5f7f9;
             line-height: 1.75;
         }
 
@@ -30,73 +38,88 @@
             text-decoration: none;
         }
 
-        /* 顶部政府风格公告栏 */
+        /* =========================
+           GOV STYLE TOP BAR
+        ========================== */
+
         .topbar {
-            background: #112f4e;
-            color: #fff;
-            padding: 9px 6%;
-            font-size: 14px;
+            background: #102f50;
+            color: #ffffff;
+            padding: 8px 6%;
+            font-size: 13px;
         }
 
-        .topbar span {
-            opacity: .9;
+        .topbar-inner {
+            max-width: 1200px;
+            margin: auto;
         }
 
-        /* 导航 */
+        /* =========================
+           HEADER
+        ========================== */
+
         header {
-            background: #fff;
-            border-bottom: 1px solid #ddd;
+            background: #ffffff;
+            border-bottom: 1px solid #d8dde2;
         }
 
         .nav {
-            max-width: 1180px;
+            max-width: 1200px;
+            min-height: 86px;
             margin: auto;
-            min-height: 82px;
+
+            padding: 0 25px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 25px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 14px;
         }
 
         .emblem {
             width: 48px;
             height: 48px;
-            border: 3px solid #143d63;
+
+            border: 3px solid #123b63;
             border-radius: 50%;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #143d63;
-            font-size: 23px;
+
+            color: #123b63;
+            font-size: 21px;
+            font-weight: 900;
+        }
+
+        .brand-title {
+            color: #123b63;
+            font-size: 20px;
             font-weight: 800;
         }
 
-        .brand-text strong {
-            display: block;
-            font-size: 20px;
-            color: #143d63;
-        }
-
-        .brand-text small {
-            color: #666;
-            letter-spacing: .5px;
+        .brand-subtitle {
+            color: #6b737b;
+            font-size: 12px;
+            letter-spacing: .6px;
         }
 
         nav {
             display: flex;
-            gap: 28px;
+            align-items: center;
+            gap: 27px;
         }
 
         nav a {
-            font-weight: 600;
-            color: #333;
-            padding: 28px 0;
+            font-size: 15px;
+            font-weight: 650;
+            padding: 30px 0;
+
             border-bottom: 3px solid transparent;
         }
 
@@ -105,85 +128,146 @@
             border-bottom-color: #b22234;
         }
 
-        /* Hero */
+        .telegram-nav {
+            color: #ffffff !important;
+            background: #229ed9;
+            padding: 8px 15px !important;
+            border-radius: 3px;
+            border: none !important;
+        }
+
+        .telegram-nav:hover {
+            background: #168ac1;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
-            background: #123b63;
+            background:
+                linear-gradient(
+                    135deg,
+                    #102f50 0%,
+                    #16466f 100%
+                );
+
             color: white;
             border-bottom: 6px solid #b22234;
         }
 
         .hero-inner {
-            max-width: 1180px;
+            max-width: 1200px;
             margin: auto;
-            padding: 75px 25px 80px;
+            padding: 90px 25px 95px;
         }
 
         .eyebrow {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #dce8f2;
-            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            color: #cbdbe8;
         }
 
         .hero h1 {
-            font-size: clamp(40px, 6vw, 68px);
+            max-width: 900px;
+
+            font-size: clamp(42px, 6vw, 72px);
             line-height: 1.12;
+
             margin: 18px 0;
-            max-width: 850px;
         }
 
         .hero p {
-            max-width: 760px;
+            max-width: 780px;
+
             font-size: 20px;
-            color: #e6edf3;
+            color: #e3ebf2;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 22px;
-            padding: 12px 23px;
-            background: white;
-            color: #123b63;
-            font-weight: 700;
+
+            padding: 12px 22px;
+
             border-radius: 3px;
+
+            font-weight: 750;
         }
 
-        .button:hover {
-            background: #eee;
+        .button-primary {
+            background: #ffffff;
+            color: #123b63;
         }
 
-        /* 主内容 */
+        .button-primary:hover {
+            background: #e9eef2;
+        }
+
+        .button-telegram {
+            background: #229ed9;
+            color: white;
+        }
+
+        .button-telegram:hover {
+            background: #168ac1;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
         .container {
-            max-width: 1180px;
+            max-width: 1200px;
             margin: auto;
-            padding: 65px 25px;
+            padding: 70px 25px;
         }
 
         .section-title {
-            font-size: 34px;
-            color: #143d63;
             margin: 0 0 12px;
+
+            color: #143d63;
+            font-size: 34px;
+            line-height: 1.3;
         }
 
         .section-intro {
-            color: #555;
             max-width: 780px;
-            margin-bottom: 35px;
+            margin-bottom: 38px;
+
+            color: #59636d;
         }
+
+        /* =========================
+           CARDS
+        ========================== */
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 22px;
         }
 
         .card {
-            background: #fff;
-            border: 1px solid #ddd;
+            background: #ffffff;
+
+            border: 1px solid #dce1e5;
             border-top: 5px solid #143d63;
-            padding: 28px;
-            box-shadow: 0 2px 7px rgba(0,0,0,.04);
+
+            padding: 30px;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,.035);
         }
 
         .card h3 {
@@ -193,12 +277,15 @@
         }
 
         .card p {
-            color: #555;
+            color: #59636d;
         }
 
-        /* 核心原则 */
+        /* =========================
+           PRINCIPLES
+        ========================== */
+
         .principles {
-            background: #fff;
+            background: #ffffff;
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #ddd;
         }
@@ -206,11 +293,11 @@
         .principle-list {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0;
         }
 
         .principle {
-            padding: 30px;
+            padding: 32px;
+
             border-bottom: 1px solid #ddd;
         }
 
@@ -219,9 +306,9 @@
         }
 
         .number {
-            font-size: 15px;
-            font-weight: 800;
             color: #b22234;
+            font-size: 14px;
+            font-weight: 850;
         }
 
         .principle h3 {
@@ -229,70 +316,130 @@
             margin: 7px 0;
         }
 
-        /* 公共讨论 */
+        /* =========================
+           STATEMENT
+        ========================== */
+
         .statement {
             background: #eef3f7;
+
             border-left: 6px solid #b22234;
-            padding: 30px;
-            margin-top: 35px;
+
+            padding: 32px;
+
             font-size: 19px;
         }
 
-        /* 页脚 */
+        /* =========================
+           TELEGRAM
+        ========================== */
+
+        .telegram-box {
+            background: #123b63;
+            color: white;
+
+            padding: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .telegram-box h2 {
+            margin-top: 0;
+            font-size: 30px;
+        }
+
+        .telegram-box p {
+            color: #dce7f0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
         footer {
             background: #102b45;
             color: #dce5ec;
-            margin-top: 30px;
         }
 
         .footer-inner {
-            max-width: 1180px;
+            max-width: 1200px;
             margin: auto;
-            padding: 45px 25px;
+
+            padding: 50px 25px;
+
             display: flex;
             justify-content: space-between;
-            gap: 40px;
+
+            gap: 50px;
         }
 
         footer h3 {
-            color: white;
+            color: #ffffff;
         }
 
         footer p {
             max-width: 600px;
         }
 
+        .footer-link {
+            color: #ffffff;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
         .copyright {
             border-top: 1px solid rgba(255,255,255,.15);
+
             padding: 18px 25px;
+
             text-align: center;
+
             font-size: 13px;
         }
 
-        @media (max-width: 800px) {
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 850px) {
+
             .nav {
                 flex-direction: column;
-                padding: 18px;
-                gap: 10px;
+                padding: 18px 20px;
+                gap: 15px;
             }
 
             nav {
-                gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 12px;
             }
 
             nav a {
-                padding: 8px;
+                padding: 7px;
             }
 
-            .grid,
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
             .principle-list {
                 grid-template-columns: 1fr;
             }
 
             .principle:nth-child(odd) {
                 border-right: none;
+            }
+
+            .telegram-box {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .footer-inner {
@@ -304,196 +451,439 @@
 
 <body>
 
+<!-- =========================
+     TOP BAR
+========================== -->
+
 <div class="topbar">
-    <span>中国公民党 · 公共政策与党章资料库</span>
+    <div class="topbar-inner">
+        中国公民党 · 政治理念与公共资料
+    </div>
 </div>
 
+
+<!-- =========================
+     HEADER
+========================== -->
+
 <header>
+
     <div class="nav">
 
         <a href="index.html" class="brand">
-            <div class="emblem">公</div>
 
-            <div class="brand-text">
-                <strong>中国公民党</strong>
-                <small>Chinese Citizens Party</small>
+            <div class="emblem">
+                公
             </div>
+
+            <div>
+                <div class="brand-title">
+                    中国公民党
+                </div>
+
+                <div class="brand-subtitle">
+                    CHINESE CITIZENS PARTY
+                </div>
+            </div>
+
         </a>
 
+
         <nav>
-            <a href="index.html">首页</a>
-            <a href="#principles">核心理念</a>
-            <a href="#mission">政治目标</a>
-            <a href="charter.html">党章</a>
+
+            <a href="index.html">
+                首页
+            </a>
+
+            <a href="#principles">
+                核心理念
+            </a>
+
+            <a href="#mission">
+                政治目标
+            </a>
+
+            <a href="charter.html">
+                党章
+            </a>
+
+            <a href="history.html">
+                历史与问题
+            </a>
+
+            <a
+                class="telegram-nav"
+                href="https://t.me/MinZhuChina"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Telegram
+
+            </a>
+
         </nav>
 
     </div>
+
 </header>
 
-<main>
 
-    <section class="hero">
-        <div class="hero-inner">
+<!-- =========================
+     HERO
+========================== -->
 
-            <div class="eyebrow">
-                DEMOCRACY · RIGHTS · RULE OF LAW
-            </div>
+<section class="hero">
 
-            <h1>
-                权力来自人民，<br>
-                政府服务公民。
-            </h1>
+    <div class="hero-inner">
 
-            <p>
-                中国公民党主张以民主、自由、人权、法治和公民参与为政治基础，
-                建立权力受到宪法和法律约束、人民能够通过制度参与并监督公共事务的政治体系。
-            </p>
+        <div class="eyebrow">
+            DEMOCRACY · RIGHTS · RULE OF LAW
+        </div>
 
-            <a class="button" href="charter.html">
+        <h1>
+            权力来自人民，
+            <br>
+            政府服务公民。
+        </h1>
+
+        <p>
+            中国公民党主张以民主、人权、法治、公民自由和政治参与为基础，
+            建立权力受到宪法与法律约束、人民能够通过制度参与并监督公共事务的政治体系。
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                class="button button-primary"
+                href="charter.html">
+
                 阅读党章 →
+
+            </a>
+
+            <a
+                class="button button-telegram"
+                href="https://t.me/MinZhuChina"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                加入 Telegram 频道 →
+
             </a>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <section class="container" id="principles">
+<!-- =========================
+     CORE IDEAS
+========================== -->
 
-        <h2 class="section-title">我们相信什么</h2>
+<section class="container" id="principles">
 
-        <p class="section-intro">
-            以下内容是中国公民党的基本政治主张。它们应当接受公开讨论、
-            批评、检验，并通过民主程序获得公众授权。
-        </p>
+    <h2 class="section-title">
+        我们相信什么
+    </h2>
 
-        <div class="grid">
+    <p class="section-intro">
+        政府的权力必须有来源、有边界、有责任。
+        公民不是权力的附属物，而是国家政治生活的参与者。
+    </p>
 
-            <article class="card">
-                <h3>人民主权</h3>
+
+    <div class="grid">
+
+        <article class="card">
+
+            <h3>
+                人民主权
+            </h3>
+
+            <p>
+                国家主权属于全体人民。
+                公共权力应当来源于人民授权，
+                并接受人民和法律的监督。
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>
+                基本人权
+            </h3>
+
+            <p>
+                人身自由、人格尊严、表达自由、
+                结社自由、信仰自由、财产权以及公平司法程序
+                应当得到法律保障。
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>
+                法治
+            </h3>
+
+            <p>
+                法律不仅约束普通公民，
+                同样必须约束政府、公职人员和政治组织。
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRINCIPLES
+========================== -->
+
+<section class="principles">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            政治原则
+        </h2>
+
+
+        <div class="principle-list">
+
+            <div class="principle">
+
+                <div class="number">
+                    01
+                </div>
+
+                <h3>
+                    民主选举
+                </h3>
+
                 <p>
-                    国家主权属于全体人民。政府的公共权力应当来源于人民的授权，
-                    并受到宪法、法律和公众监督。
+                    公民依法通过公开、公平、
+                    具有竞争性的选举参与公共事务。
                 </p>
-            </article>
 
-            <article class="card">
-                <h3>基本人权</h3>
+            </div>
+
+
+            <div class="principle">
+
+                <div class="number">
+                    02
+                </div>
+
+                <h3>
+                    权力制约
+                </h3>
+
                 <p>
-                    公民的人身自由、人格尊严、表达、结社、信仰、财产权以及公平司法程序
-                    应受到法律保障。
+                    任何个人和政治组织都不应拥有
+                    不受监督和制约的绝对权力。
                 </p>
-            </article>
 
-            <article class="card">
-                <h3>法律约束权力</h3>
+            </div>
+
+
+            <div class="principle">
+
+                <div class="number">
+                    03
+                </div>
+
+                <h3>
+                    司法独立
+                </h3>
+
                 <p>
-                    公权力必须具有明确的法律依据。任何个人、政党和政府机构都不应拥有
-                    不受制度约束的权力。
+                    司法机关应依法独立行使审判权，
+                    保障正当程序和法律面前人人平等。
                 </p>
-            </article>
 
-        </div>
-
-    </section>
+            </div>
 
 
-    <section class="principles">
+            <div class="principle">
 
-        <div class="container">
-
-            <h2 class="section-title">政治原则</h2>
-
-            <div class="principle-list">
-
-                <div class="principle">
-                    <div class="number">01</div>
-                    <h3>民主选举</h3>
-                    <p>
-                        公民通过公开、公平、竞争性的选举参与国家和地方公共事务。
-                    </p>
+                <div class="number">
+                    04
                 </div>
 
-                <div class="principle">
-                    <div class="number">02</div>
-                    <h3>权力制衡</h3>
-                    <p>
-                        立法、行政、司法以及其他公共权力应建立相互制约和监督机制。
-                    </p>
-                </div>
+                <h3>
+                    政府透明
+                </h3>
 
-                <div class="principle">
-                    <div class="number">03</div>
-                    <h3>司法独立</h3>
-                    <p>
-                        司法机关应依法独立行使审判权，并保障正当程序和法律面前人人平等。
-                    </p>
-                </div>
-
-                <div class="principle">
-                    <div class="number">04</div>
-                    <h3>新闻与信息公开</h3>
-                    <p>
-                        公共权力应具有透明度，公众应能够了解和监督涉及公共利益的重要事务。
-                    </p>
-                </div>
+                <p>
+                    公共权力应当具有透明度，
+                    并接受公众监督。
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <section class="container" id="mission">
+<!-- =========================
+     MISSION
+========================== -->
 
-        <h2 class="section-title">政治目标</h2>
+<section class="container" id="mission">
 
-        <p class="section-intro">
-            中国公民党提出通过和平、非暴力和民主政治程序参与国家治理，
-            并以成为获得人民授权的执政力量为长期政治目标。
-        </p>
+    <h2 class="section-title">
+        政治目标
+    </h2>
 
-        <div class="statement">
-            <strong>关于政府与公民的基本关系</strong><br><br>
+    <p class="section-intro">
+        中国公民党主张通过和平、非暴力和民主政治程序参与国家治理，
+        并以通过民主程序获得人民授权、成为执政力量作为长期政治目标。
+    </p>
 
-            政府的权力应当具有来源、边界和责任。
-            公民不仅是公共政策的接受者，也是国家政治生活的参与者和监督者。
-            对任何政党和政府的支持或反对，都应当建立在公开信息、
-            理性讨论和公民自主判断之上。
+
+    <div class="statement">
+
+        <strong>
+            我们追求的不是“换一个人拥有绝对权力”。
+        </strong>
+
+        <br><br>
+
+        我们追求的是一种制度：
+
+        <br><br>
+
+        <strong>
+            无论谁掌权，都必须受到法律约束；
+            <br>
+            无论哪个政党执政，都必须接受人民监督；
+            <br>
+            无论公民支持什么政治观点，都应当拥有基本权利。
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TELEGRAM
+========================== -->
+
+<section class="container">
+
+    <div class="telegram-box">
+
+        <div>
+
+            <h2>
+                加入我们的 Telegram 频道
+            </h2>
+
+            <p>
+                获取政治理念、党章、公共政策以及相关资料更新。
+            </p>
+
         </div>
 
-    </section>
 
-</main>
+        <a
+            class="button button-telegram"
+            href="https://t.me/MinZhuChina"
+            target="_blank"
+            rel="noopener noreferrer">
 
+            加入频道 →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
 
 <footer>
 
     <div class="footer-inner">
 
         <div>
-            <h3>中国公民党</h3>
+
+            <h3>
+                中国公民党
+            </h3>
 
             <p>
-                一个以民主、人权、法治、公民自由和公共监督为核心理念的
-                政治组织设定页面。
+                民主 · 人权 · 法治 · 公民参与
             </p>
+
         </div>
 
+
         <div>
-            <h3>快速访问</h3>
+
+            <h3>
+                快速访问
+            </h3>
 
             <p>
-                <a href="charter.html">党章</a><br>
-                <a href="#principles">核心理念</a><br>
-                <a href="#mission">政治目标</a>
+
+                <a
+                    class="footer-link"
+                    href="charter.html">
+
+                    党章
+
+                </a>
+
+                <br>
+
+                <a
+                    class="footer-link"
+                    href="history.html">
+
+                    历史与问题
+
+                </a>
+
+                <br>
+
+                <a
+                    class="footer-link"
+                    href="https://t.me/MinZhuChina"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Telegram
+
+                </a>
+
             </p>
+
         </div>
 
     </div>
 
+
     <div class="copyright">
-        © 2026 中国公民党 · 政治理念与党章资料
+
+        © 2026 中国公民党 · 政治理念与公共资料
+
     </div>
 
 </footer>
